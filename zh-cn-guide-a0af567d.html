@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>球盟会 · 站点介绍与说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #faf7f2;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            color: #2c3a3a;
+            line-height: 1.7;
+            padding: 0 1rem;
+        }
+
+        .page {
+            max-width: 960px;
+            margin: 3rem auto;
+            background-color: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+        }
+
+        /* Hero 区 */
+        .hero {
+            background: linear-gradient(145deg, #f0ede8 0%, #e7e2d9 100%);
+            padding: 3.5rem 2.5rem 3rem;
+            text-align: center;
+            border-bottom: 1px solid #e0d9cf;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #1e2b2b;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .subhead {
+            font-size: 1.1rem;
+            color: #4d5f5f;
+            max-width: 600px;
+            margin: 0.5rem auto 0;
+            line-height: 1.6;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            margin-top: 1.8rem;
+            background: #ffffffd9;
+            border-radius: 40px;
+            padding: 0.35rem 1.6rem;
+            font-size: 0.85rem;
+            color: #3f5555;
+            border: 1px solid #d7cdbf;
+            backdrop-filter: blur(2px);
+        }
+
+        /* 内容区通用 */
+        .content-area {
+            padding: 2.5rem 2.5rem 1.8rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #1f3333;
+            margin: 1.8rem 0 1rem 0;
+            border-left: 4px solid #b8a78f;
+            padding-left: 1rem;
+        }
+
+        .section-title:first-of-type {
+            margin-top: 0.2rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            color: #2f3f3f;
+        }
+
+        /* 优势卡片区 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .feature-item {
+            background: #f6f2eb;
+            border-radius: 16px;
+            padding: 1.3rem 1.4rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .feature-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+
+        .feature-item strong {
+            display: block;
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: #1f3333;
+            margin-bottom: 0.3rem;
+        }
+
+        .feature-item span {
+            font-size: 0.95rem;
+            color: #415656;
+        }
+
+        /* 引用/提示框 */
+        .callout-box {
+            background: #efeae2;
+            border-left: 6px solid #b8a78f;
+            padding: 1.3rem 1.8rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.8rem 0;
+            font-size: 0.98rem;
+            color: #2c3f3f;
+        }
+
+        .callout-box a {
+            color: #1f5c5c;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 450;
+        }
+
+        .callout-box a:hover {
+            color: #0f3d3d;
+        }
+
+        /* FAQ 摘要 */
+        .faq-summary {
+            margin: 1.5rem 0 0.8rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px dashed #dad1c5;
+            padding: 0.9rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #1b2d2d;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-a {
+            font-size: 0.95rem;
+            color: #4a6060;
+        }
+
+        .faq-a a {
+            color: #1f5c5c;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        /* 底部 */
+        .footer-links {
+            background: #f4efe8;
+            padding: 2.2rem 2.5rem;
+            margin-top: 0.8rem;
+            border-top: 1px solid #e0d9cf;
+            text-align: center;
+            font-size: 0.92rem;
+            color: #4b6262;
+        }
+
+        .footer-links p {
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-links a {
+            color: #1f5c5c;
+            text-decoration: none;
+            border-bottom: 1px dotted #b8a78f;
+            padding-bottom: 1px;
+        }
+
+        .footer-links a:hover {
+            border-bottom: 1px solid #1f5c5c;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e1d8cc;
+            margin: 1.2rem 0;
+        }
+
+        /* 响应式 */
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero {
+                padding: 2.2rem 1.5rem;
+            }
+            .content-area {
+                padding: 1.8rem 1.5rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .footer-links {
+                padding: 1.5rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero .subhead {
+                font-size: 0.98rem;
+            }
+            .section-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+    <!-- hero 区 -->
+    <div class="hero">
+        <h1>球盟会</h1>
+        <p class="subhead">一份关于站点的介绍、结构说明与常见疑问整理<br>力求清晰、平实，便于浏览者快速了解</p>
+        <div class="badge">站点介绍页 · 持续更新</div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="content-area">
+
+        <!-- 介绍段 -->
+        <h2 class="section-title">关于本站</h2>
+        <p><strong>球盟会</strong> 是一个围绕综合信息聚合与主题内容展示所构建的线上空间。站点名称取自「球」与「盟会」的组合意象，意在呈现一种开放、汇聚的浏览氛围。本站内容整理自多来源公开信息，以实用与客观为原则，不涉及任何形式的诱导或承诺。</p>
+
+        <p>从设计之初，站点便以 <strong>内容结构化 + 可读性</strong> 作为核心考量，页面布局采用卡片式与分层导航，方便访客在不同主题间切换。目前网站仍在持续完善中，更多栏目与资源整理会逐步上线。</p>
+
+        <!-- 优势区 -->
+        <h2 class="section-title">几个特点</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <strong>分类清晰</strong>
+                <span>按主题与功能划分内容板块，减少信息过载，快速定位感兴趣的部分。</span>
+            </div>
+            <div class="feature-item">
+                <strong>视觉友好</strong>
+                <span>低饱和配色、适中字号与间距，优先考虑长时间阅读的舒适度。</span>
+            </div>
+            <div class="feature-item">
+                <strong>引用有据</strong>
+                <span>页面内引用内容均标注出处或说明，不做无根据的陈述。</span>
+            </div>
+            <div class="feature-item">
+                <strong>轻量访问</strong>
+                <span>优化资源加载，页面响应速度较快，移动设备同样适配。</span>
+            </div>
+        </div>
+
+        <!-- 说明区 + 提示框（嵌入链接） -->
+        <h2 class="section-title">站点说明</h2>
+        <p>如果你正在寻找一个可靠的信息参照平台，不妨通过 <a href="https://zh-cn-qmh.com">球盟会</a> 来深入了解。站内内容整合自公开领域，同时避免夸张表达与不实引导。我们建议浏览者依据自身判断，结合多方信息进行参考。</p>
+
+        <div class="callout-box">
+            <strong>📌 提示：</strong> 本站不提供任何形式的投资、理财或博彩建议，所有内容仅供信息参考。如有任何疑问，建议查阅相关权威渠道进行核实。关于平台本身的基础介绍与内容结构，你可以直接访问 <a href="https://zh-cn-qmh.com">球盟会</a> 获得更完整的页面体验。
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <h2 class="section-title">常见疑问摘要</h2>
+        <div class="faq-summary">
+            <div class="faq-item">
+                <div class="faq-q">Q：球盟会是什么类型的网站？</div>
+                <div class="faq-a">A：一个以信息整合与展示为主的站点，内容涵盖多个主题类目，风格偏向整理型说明页面。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Q：内容是否可靠？</div>
+                <div class="faq-a">A：页面引用的内容均来自可查来源，并在可能处标注了出处。但浏览者仍需自行核对重要信息。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Q：网站后续会有更新吗？</div>
+                <div class="faq-a">A：是的，团队会定期补充栏目与优化阅读体验，也欢迎通过站内反馈渠道提出建议。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Q：如何直接访问主站？</div>
+                <div class="faq-a">A：你可以通过链接 <a href="https://zh-cn-qmh.com">球盟会</a> 进入首页，浏览完整内容。</div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- 额外场景 / 补充说明 -->
+        <p style="font-size: 0.95rem; color: #4f6868;">本介绍页力求以平实语调梳理站点脉络，不依赖夸大词汇或紧迫性话术。无论你是初次了解，还是希望重新审视 <a href="https://zh-cn-qmh.com">球盟会</a> 的结构，都可以将此页作为一个出发点。</p>
+
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+        <p><a href="https://zh-cn-qmh.com">球盟会</a> · 站点介绍与说明页</p>
+        <p>内容仅作参考，不构成任何决策依据</p>
+        <p style="margin-top: 0.6rem; font-size: 0.85rem; color: #6f8888;">页面版本：2025 · 米白排版</p>
+    </div>
+
+</div>
+
+</body>
+</html>
